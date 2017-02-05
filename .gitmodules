@@ -1,0 +1,3 @@
+[submodule "polygones/repository"]
+	path = polygones/repository
+	url = git://github.com/codisart/polygones.git
