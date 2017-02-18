@@ -10,3 +10,6 @@
 [submodule "zend-file/repository"]
 	path = zend-file/repository
 	url = https://github.com/codisart/zend-file.git
+[submodule "zend-validator/repository"]
+	path = zend-validator/repository
+	url = https://github.com/codisart/zend-validator.git
