@@ -1,4 +1,4 @@
 # env-setup
 
-
-git config --localinclude.path '../.gitconfig'
+on windows : do
+`install\windows\scrip.bat`
