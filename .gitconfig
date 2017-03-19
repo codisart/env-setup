@@ -1,5 +1,7 @@
-[alias]    
+[alias]
     amend = commit --amend
     st = status
     co = checkout
-    
+[user]
+    email = louis.celier@gmail.com
+    name = codisart
