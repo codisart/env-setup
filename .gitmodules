@@ -4,6 +4,3 @@
 [submodule "phing/repository"]
 	path = phing/repository
 	url = https://github.com/codisart/phing.git
-[submodule "zend-file/repository"]
-	path = zend-file/repository
-	url = https://github.com/codisart/zend-file.git
