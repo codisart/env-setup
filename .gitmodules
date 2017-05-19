@@ -1,15 +1,9 @@
 [submodule "polygones/repository"]
 	path = polygones/repository
 	url = https://github.com/codisart/polygones.git
-[submodule "zend-hydrator/repository"]
-	path = zend-hydrator/repository
-	url = https://github.com/codisart/zend-hydrator.git
 [submodule "phing/repository"]
 	path = phing/repository
 	url = https://github.com/codisart/phing.git
 [submodule "zend-file/repository"]
 	path = zend-file/repository
 	url = https://github.com/codisart/zend-file.git
-[submodule "zend-validator/repository"]
-	path = zend-validator/repository
-	url = https://github.com/codisart/zend-validator.git
