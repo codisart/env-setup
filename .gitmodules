@@ -1,6 +1,3 @@
 [submodule "polygones/repository"]
 	path = polygones/repository
 	url = https://github.com/codisart/polygones.git
-[submodule "phing/repository"]
-	path = phing/repository
-	url = https://github.com/codisart/phing.git
