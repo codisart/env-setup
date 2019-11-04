@@ -38,7 +38,7 @@ Vagrant.configure("2") do |config|
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
   config.vm.synced_folder ".", "/vagrant", disabled: true
-  config.vm.synced_folder "./repository", "/var/www/nightwatch", type: "virtualbox"
+  config.vm.synced_folder "./repository", "/var/www/zend-db", type: "virtualbox"
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
@@ -61,23 +61,21 @@ Vagrant.configure("2") do |config|
   # config.push.define "atlas" do |push|
   #   push.app = "YOUR_ATLAS_USERNAME/YOUR_APPLICATION_NAME"
   # end
-  config.ssh.forward_agent = true
 
   # Enable provisioning with a shell script. Additional provisioners such as
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
   config.vm.provision "shell", inline: <<-SHELL
-    apt-get -qq install apt-transport-https lsb-release ca-certificates curl git unzip -y
+    apt-get -qq install apt-transport-https lsb-release ca-certificates unzip -y
     wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
-    sh -c 'echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list'
+    echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list
     apt-get -qq update
-    apt-get -qq install php7.1 php7.1-xml php7.1-mbstring php7.1-bcmath php7.1-xdebug php7.1-curl -y
+    apt-get -qq install php7.2 php7.2-xdebug php7.2-xml php7.2-mbstring git curl -y
     curl -Ss https://getcomposer.org/installer | php
     mv composer.phar /usr/bin/composer
     su vagrant
-    cd /var/www/nightwatch
-    echo "cd /var/www/nightwatch" >> /home/vagrant/.bashrc
+    cd /var/www/zend-db
     composer install --quiet
-    ssh-keyscan -H git.ubeeqo.com >> /home/vagrant/.ssh/known_hosts
+    echo "cd /var/www/zend-db" >> /home/vagrant/.bashrc
   SHELL
 end

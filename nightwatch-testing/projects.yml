@@ -1,0 +1,35 @@
+default:
+  url: git.ubeeqo.com
+  key: "path"
+
+  payment-service:
+    project-name: svc-psp
+    project-id: 75
+    token: 72f-eNGBb6oBRFMSVuZ7
+    composer:
+      php: 7.1
+    npm:
+      node: latest
+  pa
+
+
+
+
+
+   archi de test
+   PC
+   => Vagrant with PHP on which we install nightwatch
+     => when nightwatch run, launch one docker for each project
+
+
+
+
+     workflow each night
+     for each gitlab instance
+       for each project
+         CheckCommand
+           if update needed alors UpdateCommand
+
+
+       the update command launch the docker listed for the project
+       with
