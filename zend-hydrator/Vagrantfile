@@ -12,12 +12,7 @@ Vagrant.configure("2") do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
-  config.vm.box = "debian/contrib-stretch64"
-
-  # Disable automatic box update checking. If you disable this, then
-  # boxes will only be checked for updates when the user runs
-  # `vagrant box outdated`. This is not recommended.
-  # config.vm.box_check_update = false
+  config.vm.box = "debian/contrib-buster64"
 
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
@@ -40,42 +35,24 @@ Vagrant.configure("2") do |config|
   config.vm.synced_folder ".", "/vagrant", disabled: true
   config.vm.synced_folder "./repository", "/var/www/zend-hydrator", type: "virtualbox"
 
-  # Provider-specific configuration so you can fine-tune various
-  # backing providers for Vagrant. These expose provider-specific options.
-  # Example for VirtualBox:
-  #
-  # config.vm.provider "virtualbox" do |vb|
-  #   # Display the VirtualBox GUI when booting the machine
-  #   vb.gui = true
-  #
-  #   # Customize the amount of memory on the VM:
-  #   vb.memory = "1024"
-  # end
-  #
-  # View the documentation for the provider you are using for more
-  # information on available options.
-
-  # Define a Vagrant Push strategy for pushing to Atlas. Other push strategies
-  # such as FTP and Heroku are also available. See the documentation at
-  # https://docs.vagrantup.com/v2/push/atlas.html for more information.
-  # config.push.define "atlas" do |push|
-  #   push.app = "YOUR_ATLAS_USERNAME/YOUR_APPLICATION_NAME"
-  # end
-
-  # Enable provisioning with a shell script. Additional provisioners such as
-  # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
-  # documentation for more information about their specific syntax and use.
+  # Enable provisioning with a shell script.
   config.vm.provision "shell", inline: <<-SHELL
-    apt-get -qq install apt-transport-https lsb-release ca-certificates unzip -y
+    apt-get -qq install apt-transport-https lsb-release ca-certificates zip unzip -y
     wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
     echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list
     apt-get -qq update
-    apt-get -qq install php7.2 php7.2-xdebug php7.2-xml php7.2-mbstring git curl -y
+    apt-get purge 'php*' -qq -y
+    apt-get -qq install git curl -y
+    apt-get -qq install php7.3-common -y
+    apt-get -qq install php7.3 -y
+    apt-get -qq install php7.3-xdebug -y
+    apt-get -qq install php7.3-xml -y
+    apt-get -qq install php7.3-mbstring -y
     curl -Ss https://getcomposer.org/installer | php
     mv composer.phar /usr/bin/composer
     su vagrant
     cd /var/www/zend-hydrator
-    composer install --quiet
+    composer install --quiet --prefer-source
     echo "cd /var/www/zend-hydrator" >> /home/vagrant/.bashrc
   SHELL
 end
