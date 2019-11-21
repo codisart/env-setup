@@ -1,6 +1,8 @@
-cd datasionning
-git clone https://github.com/codisart/datasioning.git repository
-cd ..
+
+cd $(dirname $(readlink -f $0))
+cd ../..
+
+git clone https://github.com/codisart/datasioning.git datasioning/repository
 
 git clone https://github.com/codisart/zend-validator.git zend-validator/repository
 cd zend-validator/repository
