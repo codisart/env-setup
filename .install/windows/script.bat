@@ -4,6 +4,8 @@ cd ../..
 
 git clone https://github.com/codisart/datasioning.git datasioning/repository
 
+git clone https://github.com/codisart/polygones.git polygones/repository
+
 git clone https://github.com/codisart/zend-validator.git zend-validator/repository
 cd zend-validator/repository
 git remote add upstream https://github.com/zendframework/zend-validator.git
