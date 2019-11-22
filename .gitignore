@@ -1,5 +1,6 @@
 .vagrant
 /datasioning/repository
+/polygones/repository
 /zend-validator/repository
 /zend-hydrator/repository
 /zend-file/repository
