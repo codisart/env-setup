@@ -14,11 +14,6 @@ Vagrant.configure("2") do |config|
   # boxes at https://atlas.hashicorp.com/search.
   config.vm.box = "debian/contrib-buster64"
 
-  # Create a forwarded port mapping which allows access to a specific port
-  # within the machine from a port on the host machine. In the example below,
-  # accessing "localhost:8080" will access port 80 on the guest machine.
-  # config.vm.network "forwarded_port", guest: 80, host: 8080
-
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
   # config.vm.network "private_network", ip: "192.168.33.10"
@@ -38,12 +33,11 @@ Vagrant.configure("2") do |config|
   # Enable provisioning with a shell script.
   config.vm.provision "shell", inline: <<-SHELL
     apt-get -qq update
-    apt-get -qq install apt-transport-https lsb-release ca-certificates curl git unzip -y
+    apt-get -qq install apt-transport-https lsb-release ca-certificates curl git zip unzip -y
     wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
     echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list
     apt-get -qq update
     apt-get purge 'php*' -qq -y
-    apt-get -qq install git curl -y
     apt-get -qq install php7.3-common -y
     apt-get -qq install php7.3 -y
     apt-get -qq install php7.3-xdebug -y
