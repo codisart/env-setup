@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+
+  php:
+    build: .docker
+    volumes:
+      - "./repository:/var/www/zend-file"
+    working_dir: "/var/www/zend-file"
+    entrypoint: ""
+    command: "php-fpm"
