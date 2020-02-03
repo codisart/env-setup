@@ -1,10 +1,13 @@
 .vagrant
+/.idea
+
 /datasioning/repository
+/db-repository/repository
+/mise-en-place/repository
 /polygones/repository
 /zend-validator/repository
 /zend-hydrator/repository
 /zend-file/repository
 /nightwatch/repository
 /codisart-blog/repository
-/mise-en-place/repository
 /owncloud/repository

@@ -1,5 +1,8 @@
+#!/bin/sh
 
-cd %~dp0
+brew install coreutils
+
+cd $(dirname $(greadlink -f $0))
 cd ../..
 
 git clone https://github.com/codisart/datasioning.git datasioning/repository
