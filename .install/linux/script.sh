@@ -5,11 +5,11 @@ cd ../..
 
 git clone https://github.com/codisart/datasioning.git datasioning/repository
 
-git clone https://github.com/codisart/db-repository.git db-repository/repository
-
 git clone https://github.com/theloulous/php-mise-en-place.git mise-en-place/repository
 
 git clone https://github.com/codisart/polygones.git polygones/repository
+
+git clone https://github.com/codisart/storal-repository.git storal-repository/repository
 
 git clone https://github.com/codisart/zend-validator.git zend-validator/repository
 cd zend-validator/repository
