@@ -2,9 +2,9 @@
 /.idea
 
 /datasioning/repository
-/db-repository/repository
 /mise-en-place/repository
 /polygones/repository
+/storal-repository/repository
 /zend-validator/repository
 /zend-hydrator/repository
 /zend-file/repository
