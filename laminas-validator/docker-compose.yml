@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+
+  php:
+    build: .docker
+    volumes:
+      - "./repository:/var/www/laminas-validator"
+    working_dir: "/var/www/laminas-validator"
+    entrypoint: ""
+    command: "php-fpm"

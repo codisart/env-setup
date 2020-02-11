@@ -5,9 +5,8 @@
 /mise-en-place/repository
 /polygones/repository
 /storal-repository/repository
-/zend-validator/repository
-/zend-hydrator/repository
-/zend-file/repository
+/laminas-validator/repository
+/laminas-hydrator/repository
 /nightwatch/repository
 /codisart-blog/repository
 /owncloud/repository

@@ -5,7 +5,7 @@ services:
   php:
     build: .docker
     volumes:
-      - "./repository:/var/www/zend-file"
-    working_dir: "/var/www/zend-file"
+      - "./repository:/var/www/laminas-hydrator"
+    working_dir: "/var/www/laminas-hydrator"
     entrypoint: ""
     command: "php-fpm"
