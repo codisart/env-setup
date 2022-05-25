@@ -28,4 +28,9 @@ cd owncloud/repository
 git remote add upstream https://github.com/owncloud/core.git
 cd -
 
+git clone https://github.com/codisart/dependabot-core.git dependabot/repository
+cd dependabot/repository
+git remote add upstream https://github.com/dependabot/dependabot-core.git
+cd -
+
 git config --local include.path ../.gitconfig
