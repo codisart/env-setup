@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+
+  php:
+    build: .docker
+    volumes:
+      - "./repository:/var/www/storal-repository"
+    working_dir: "/var/www/storal-repository"
+    entrypoint: ""
+    command: "php-fpm"
+    networks:
+      - "storal"
+
+  postgres:
+    image: postgres:9.2
+    environment:
+      POSTGRES_USER: storal
+      POSTGRES_PASSWORD: storal
+      POSTGRES_DB: storal
+      TZ: 'UTC+1'
+      PGTZ: 'UTC+1'
+    ports:
+      - "5433:5432"
+    networks:
+      - "storal"
+
+networks:
+  storal:
+    driver: bridge
